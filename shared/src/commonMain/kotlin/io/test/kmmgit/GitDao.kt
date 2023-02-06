@@ -16,12 +16,9 @@ import kotlinx.coroutines.flow.map
 class GitDao {
 
     private val realm: Realm by lazy {
-//        val configuration = RealmConfiguration.create(schema = setOf(GitUserRealm::class))
-
         val configuration = RealmConfiguration.Builder(
             setOf(GitUserRealm::class, GitFollowerRealm::class)
         ).apply {
-//            encryptionKey(ByteArray(64))
             deleteRealmIfMigrationNeeded()
         }.build()
 

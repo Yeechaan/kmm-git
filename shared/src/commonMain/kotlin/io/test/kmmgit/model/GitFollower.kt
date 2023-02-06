@@ -14,9 +14,6 @@ class GitFollowerRealm : EmbeddedRealmObject {
     var id: Int = 0
     var login: String = ""
     var url: String = ""
-
-    @Index
-    var index: ObjectId = ObjectId()
 }
 
 fun GitFollowerRealm.asData() =

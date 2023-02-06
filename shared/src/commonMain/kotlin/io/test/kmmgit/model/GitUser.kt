@@ -11,6 +11,7 @@ data class GitUser(
     var login: String = "",
     var name: String = "",
     var company: String = "",
+    var follower: GitFollower?,
     var followers: List<GitFollower> = listOf(),
 )
 
@@ -20,6 +21,7 @@ class GitUserRealm : RealmObject {
     var login: String = ""
     var name: String = ""
     var company: String = ""
+    var follower: GitFollower? = null
     var followers: RealmList<GitFollowerRealm> = realmListOf()
 }
 
@@ -29,6 +31,7 @@ fun GitUserRealm.asData() =
         login = login,
         name = name,
         company = company,
+        follower = follower,
         followers = followers.map { it.asData() }
     )
 
